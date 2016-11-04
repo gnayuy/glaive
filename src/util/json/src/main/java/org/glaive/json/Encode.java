@@ -33,7 +33,8 @@ public class Encode {
 
         try {
                 // Convert object to JSON string and save into a file directly
-                mapper.writeValue(new File("MetaData.json"), info);
+                //mapper.writeValue(new File("MetaData.json"), info);
+                mapper.writerWithDefaultPrettyPrinter().writeValue(new File("MetaData.json"), info);
 
                 // Convert object to JSON string
                 String jsonInString = mapper.writeValueAsString(info);
@@ -54,35 +55,35 @@ public class Encode {
         
         MetaData info = new MetaData();
 
-        info.setBits_per_voxel(16);
-        info.setNumber_of_channels(2);
+        info.setBits(16);
+        info.setChannels(2);
         
         MetaData.Dimension dimension = new MetaData.Dimension();
-        dimension.setDim_x(640);
-        dimension.setDim_y(552);
-        dimension.setDim_z(204);
+        dimension.setDx(640);
+        dimension.setDy(552);
+        dimension.setDz(204);
         info.setDimension(dimension);
         
         info.setName("2015-07-11-johan");
         
         MetaData.Origin origin = new MetaData.Origin();
-        origin.setOrigin_x(72739.042);
-        origin.setOrigin_y(41644.696);
-        origin.setOrigin_z(14966.719);
+        origin.setOx(72739.042);
+        origin.setOy(41644.696);
+        origin.setOz(14966.719);
         info.setOrigin(origin);
         
         MetaData.Size size = new MetaData.Size();
-        size.setSize_x(16001.76875);
-        size.setSize_y(16099.7807971014);
-        size.setSize_z(64066.5882352941);
+        size.setSx(16001.76875);
+        size.setSy(16099.7807971014);
+        size.setSz(64066.5882352941);
         info.setSize(size);
         
         info.setUnit("micrometer");
         
         MetaData.VoxelSize voxelsize = new MetaData.VoxelSize();
-        voxelsize.setVoxelsize_x(0.25002763671875);
-        voxelsize.setVoxelsize_y(0.25155907495471);
-        voxelsize.setVoxelsize_z(1.00104044117647);
+        voxelsize.setVx(0.25002763671875);
+        voxelsize.setVy(0.25155907495471);
+        voxelsize.setVz(1.00104044117647);
         info.setVoxelsize(voxelsize);
         
         return info;

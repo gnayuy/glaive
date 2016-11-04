@@ -31,21 +31,12 @@ public class Decode {
         try {
 
             // Convert JSON string from file to Object
-            MetaData staff = mapper.readValue(new File("metainfo.json"), MetaData.class);
-            System.out.println(staff);
+            MetaData info = mapper.readValue(new File("MetaData.json"), MetaData.class);
+            System.out.println(info);
             
             //Pretty print
-            String prettyStaff = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(staff);
-            System.out.println(prettyStaff);
-
-            // Convert JSON string to Object
-            String jsonInString = "{\"name\":\"mkyong1\",\"salary\":7500,\"skills\":[\"java\",\"python\"]}";
-            MetaData staff1 = mapper.readValue(jsonInString, MetaData.class);
-            System.out.println(staff1);
-
-            //Pretty print
-            String prettyStaff1 = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(staff1);
-            System.out.println(prettyStaff1);
+            String prettyInfo = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(info);
+            System.out.println(prettyInfo);
 
         } catch (JsonGenerationException e) {
             e.printStackTrace();

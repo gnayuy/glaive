@@ -12,114 +12,114 @@ package org.glaive.json;
 public class MetaData {
 
     public static class Dimension {
-        private int dim_x, dim_y, dim_z;
-        
-        public int getDim_x() {
-            return dim_x;
+        private int dx, dy, dz;
+
+        public int getDx() {
+            return dx;
         }
 
-        public int getDim_y() {
-            return dim_y;
+        public int getDy() {
+            return dy;
         }
 
-        public int getDim_z() {
-            return dim_z;
-        }
-        
-        public void setDim_x(int dim_x) {
-            this.dim_x = dim_x;
+        public int getDz() {
+            return dz;
         }
 
-        public void setDim_y(int dim_y) {
-            this.dim_y = dim_y;
+        public void setDx(int dx) {
+            this.dx = dx;
         }
 
-        public void setDim_z(int dim_z) {
-            this.dim_z = dim_z;
+        public void setDy(int dy) {
+            this.dy = dy;
+        }
+
+        public void setDz(int dz) {
+            this.dz = dz;
         }
     }
     
     public static class Origin {
-        private double origin_x, origin_y, origin_z;
+        private double ox, oy, oz;
 
-        public double getOrigin_x() {
-            return origin_x;
+        public double getOx() {
+            return ox;
         }
 
-        public double getOrigin_y() {
-            return origin_y;
+        public double getOy() {
+            return oy;
         }
 
-        public double getOrigin_z() {
-            return origin_z;
+        public double getOz() {
+            return oz;
         }
 
-        public void setOrigin_x(double origin_x) {
-            this.origin_x = origin_x;
+        public void setOx(double ox) {
+            this.ox = ox;
         }
 
-        public void setOrigin_y(double origin_y) {
-            this.origin_y = origin_y;
+        public void setOy(double oy) {
+            this.oy = oy;
         }
 
-        public void setOrigin_z(double origin_z) {
-            this.origin_z = origin_z;
+        public void setOz(double oz) {
+            this.oz = oz;
         }
     }
     
     public static class VoxelSize {
-        private double voxelsize_x, voxelsize_y, voxelsize_z;
+        private double vx, vy, vz;
 
-        public double getVoxelsize_x() {
-            return voxelsize_x;
+        public double getVx() {
+            return vx;
         }
 
-        public double getVoxelsize_y() {
-            return voxelsize_y;
+        public double getVy() {
+            return vy;
         }
 
-        public double getVoxelsize_z() {
-            return voxelsize_z;
+        public double getVz() {
+            return vz;
         }
 
-        public void setVoxelsize_x(double voxelsize_x) {
-            this.voxelsize_x = voxelsize_x;
+        public void setVx(double vx) {
+            this.vx = vx;
         }
 
-        public void setVoxelsize_y(double voxelsize_y) {
-            this.voxelsize_y = voxelsize_y;
+        public void setVy(double vy) {
+            this.vy = vy;
         }
 
-        public void setVoxelsize_z(double voxelsize_z) {
-            this.voxelsize_z = voxelsize_z;
+        public void setVz(double vz) {
+            this.vz = vz;
         }
     }
     
     public static class Size {
-        private double size_x, size_y, size_z;
+        private double sx, sy, sz;
 
-        public double getSize_x() {
-            return size_x;
+        public double getSx() {
+            return sx;
         }
 
-        public double getSize_y() {
-            return size_y;
+        public double getSy() {
+            return sy;
         }
 
-        public double getSize_z() {
-            return size_z;
+        public double getSz() {
+            return sz;
         }
 
-        public void setSize_x(double size_x) {
-            this.size_x = size_x;
+        public void setSx(double sx) {
+            this.sx = sx;
         }
 
-        public void setSize_y(double size_y) {
-            this.size_y = size_y;
+        public void setSy(double sy) {
+            this.sy = sy;
         }
 
-        public void setSize_z(double size_z) {
-            this.size_z = size_z;
+        public void setSz(double sz) {
+            this.sz = sz;
         }
     }
      
@@ -129,8 +129,8 @@ public class MetaData {
     private Origin origin;
     private VoxelSize voxelsize;
     private Size size;
-    private int bits_per_voxel;
-    private int number_of_channels;
+    private int bits; // bits_per_voxel;
+    private int channels; // number_of_channels
     
     public MetaData()
     {
@@ -160,12 +160,12 @@ public class MetaData {
         return size;
     }
 
-    public int getBits_per_voxel() {
-        return bits_per_voxel;
+    public int getBits() {
+        return bits;
     }
 
-    public int getNumber_of_channels() {
-        return number_of_channels;
+    public int getChannels() {
+        return channels;
     }
 
     public void setName(String name) {
@@ -192,11 +192,13 @@ public class MetaData {
         this.size = size;
     }
 
-    public void setBits_per_voxel(int bits_per_voxel) {
-        this.bits_per_voxel = bits_per_voxel;
+    public void setBits(int bits) {
+        this.bits = bits;
     }
 
-    public void setNumber_of_channels(int number_of_channels) {
-        this.number_of_channels = number_of_channels;
+    public void setChannels(int channels) {
+        this.channels = channels;
     }
+
+    
 }
