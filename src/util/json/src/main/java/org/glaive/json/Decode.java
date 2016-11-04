@@ -37,6 +37,11 @@ public class Decode {
             //Pretty print
             String prettyInfo = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(info);
             System.out.println(prettyInfo);
+            
+            // test
+            System.out.println("channels: " + info.getChannels());
+            
+            System.out.println("dimx: " + info.getDimension().getDy());
 
         } catch (JsonGenerationException e) {
             e.printStackTrace();
